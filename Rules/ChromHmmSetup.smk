@@ -7,10 +7,18 @@ from pathlib import Path
 # just notices the scripts directory also has the files
 # make make_TES and make_TSS. Are these more recent versions?
 # I am not currently sure if they are doing the same thing
+# since they are currently unknown going to ignore until have more information
+# Ethan 
 
 genome_name = Path(config['genome']).stem
 coords_dir = str(Path(chrom_hmm_dir).joinpath('COORDS'))
 anchor_dir = str(Path(chrom_hmm_dir).joinpath('ANCHORFILES'))
+
+# TODO:
+# 1. Confirm the scripts given by Colin are the most recent / correct versions
+# 2. Incorporate chrom_chrom_hmm_dir variable. Need to determine where chromHmm
+#    will be pulling resource files from before chromHmm command are executed
+# 3. Make the rest of the piplien aware that ChromHmm setup rules need to be run
 
 rule make_coords_exon_file:
     input:
